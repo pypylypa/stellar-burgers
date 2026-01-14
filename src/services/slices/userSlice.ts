@@ -115,8 +115,6 @@ const userSlice = createSlice({
         state.isLoading = false;
         if (action.payload.success) {
           state.user = action.payload.user;
-          setCookie('accessToken', action.payload.accessToken);
-          localStorage.setItem('refreshToken', action.payload.refreshToken);
         }
       })
       .addCase(userRegister.rejected, (state, action) => {
@@ -146,9 +144,6 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.user = null;
         state.isAuthChecked = true;
-        deleteCookie('accessToken');
-        deleteCookie('refreshToken');
-        localStorage.removeItem('refreshToken');
       })
       .addCase(userLogout.rejected, (state, action) => {
         state.isLoading = false;

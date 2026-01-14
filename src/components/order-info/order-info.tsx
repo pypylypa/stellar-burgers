@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from '../../services/store';
 import { Preloader } from '../ui/preloader';
 import { OrderInfoUI } from '../ui/order-info';
 import { getOrderByNumber } from '../../services/slices/orderSlice';
+import { TIngredient } from '@utils-types';
 
 export const OrderInfo: FC = () => {
   const { number } = useParams<{ number: string }>();
@@ -27,7 +28,7 @@ export const OrderInfo: FC = () => {
     const date = new Date(currentOrder.createdAt);
 
     type TIngredientsWithCount = {
-      [key: string]: any & { count: number };
+      [key: string]: TIngredient & { count: number };
     };
 
     const ingredientsInfo = currentOrder.ingredients.reduce(
@@ -50,7 +51,7 @@ export const OrderInfo: FC = () => {
     );
 
     const total = Object.values(ingredientsInfo).reduce(
-      (acc: number, item: any) => acc + item.price * item.count,
+      (acc: number, item) => acc + item.price * item.count,
       0
     );
 

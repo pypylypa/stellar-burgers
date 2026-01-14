@@ -24,8 +24,12 @@ export const ResetPassword: FC = () => {
       } else {
         setErrorText('Ошибка при сбросе пароля');
       }
-    } catch (error: any) {
-      setErrorText(error.message || 'Ошибка при сбросе пароля');
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setErrorText(error.message || 'Ошибка при сбросе пароля');
+      } else {
+        setErrorText('Ошибка при сбросе пароля');
+      }
     } finally {
       setIsLoading(false);
     }
