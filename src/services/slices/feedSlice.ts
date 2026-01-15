@@ -9,7 +9,7 @@ interface IFeedState extends TOrdersData {
   isLoading: boolean;
   error: string | null;
 }
-const initialState: IFeedState = {
+export const initialState: IFeedState = {
   orders: [],
   total: 0,
   totalToday: 0,
