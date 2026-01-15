@@ -1,0 +1,38 @@
+{
+  "user": {
+    "email": "test@example.com",
+    "name": "Тестовый Пользователь"
+  },
+  "loginResponse": {
+    "success": true,
+    "user": {
+      "email": "test@example.com",
+      "name": "Тестовый Пользователь"
+    },
+    "accessToken": "test-token",
+    "refreshToken": "refresh-token"
+  },
+  "registerResponse": {
+    "success": true,
+    "user": {
+      "email": "new@example.com",
+      "name": "Новый Пользователь"
+    },
+    "accessToken": "new-token",
+    "refreshToken": "new-refresh"
+  },
+  "updateResponse": {
+    "success": true,
+    "user": {
+      "email": "updated@example.com",
+      "name": "Обновленный Пользователь"
+    }
+  },
+  "getUserResponse": {
+    "success": true,
+    "user": {
+      "email": "test@example.com",
+      "name": "Тестовый Пользователь"
+    }
+  }
+}
