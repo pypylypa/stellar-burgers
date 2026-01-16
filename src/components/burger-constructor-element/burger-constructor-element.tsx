@@ -3,7 +3,7 @@ import { useDispatch } from '../../services/store';
 import { BurgerConstructorElementUI } from '@ui';
 import { BurgerConstructorElementProps } from './type';
 import {
-  deleteIngredient,
+  removeIngredient,
   moveIngredient
 } from '../../services/slices/constructorSlice';
 
@@ -24,7 +24,7 @@ export const BurgerConstructorElement: FC<BurgerConstructorElementProps> = memo(
     };
 
     const handleClose = () => {
-      dispatch(deleteIngredient(ingredient.id));
+      dispatch(removeIngredient(ingredient.id));
     };
 
     return (

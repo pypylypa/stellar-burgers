@@ -28,8 +28,8 @@ export const fetchUserOrders = createAsyncThunk(
   }
 );
 
-const userOrdersSlice = createSlice({
-  name: 'Orders',
+export const userOrdersSlice = createSlice({
+  name: 'userOrders',
   initialState,
   reducers: {
     clearUserOrdersError: (state) => {

@@ -8,7 +8,8 @@ jest.mock(
 
 import userOrdersReducer, {
   initialState,
-  fetchUserOrders
+  fetchUserOrders,
+  userOrdersSlice
 } from '../../services/slices/userOrdersSlice';
 import userOrdersMock from '../../mocks/user-orders.json';
 
@@ -64,7 +65,7 @@ describe('userOrdersSlice reducer', () => {
       error: 'Произошла ошибка'
     };
 
-    const action = { type: 'userOrders/clearUserOrdersError' };
+    const action = userOrdersSlice.actions.clearUserOrdersError();
     const result = userOrdersReducer(stateWithError, action);
 
     expect(result.error).toBeNull();

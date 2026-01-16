@@ -1,6 +1,7 @@
 import {
   burgerReducer,
-  initialState
+  initialState,
+  constructorSlice
 } from '../../services/slices/constructorSlice';
 import { TConstructorIngredient } from '@utils-types';
 import ingredientsMock from '../../mocks/ingredients.json';
@@ -106,12 +107,10 @@ describe('constructorSlice reducer', () => {
         ingredients: [mockMainIngredient, mockSecondIngredient]
       };
 
-      const action = {
-        type: 'constructor/removeIngredient',
-        payload: mockMainIngredient.id
-      };
+      const action = constructorSlice.actions.removeIngredient(mockMainIngredient.id);
       
       const result = burgerReducer(stateWithIngredients, action);
+
       expect(result.ingredients).toHaveLength(1);
       expect(result.ingredients[0]).toEqual(mockSecondIngredient);
       expect(result.bun).toEqual(mockBun);
