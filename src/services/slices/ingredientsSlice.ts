@@ -14,9 +14,18 @@ export const initialState: IIngredientsState = {
   error: null
 };
 
-export const getIngredients = createAsyncThunk(
-  'ingredients/getIngredients',
-  getIngredientsApi
+export const fetchIngredients = createAsyncThunk(
+  'ingredients/fetchIngredients',
+  async (_, { rejectWithValue }) => {
+    try {
+      const ingredients = await getIngredientsApi();
+      return ingredients;
+    } catch (error: any) {
+      return rejectWithValue(
+        error.message || 'Не удалось загрузить ингредиенты'
+      );
+    }
+  }
 );
 
 const ingredientsSlice = createSlice({
@@ -29,14 +38,15 @@ const ingredientsSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      .addCase(getIngredients.pending, (state) => {
+      .addCase(fetchIngredients.pending, (state) => {
         state.isLoading = true;
+        state.error = null;
       })
-      .addCase(getIngredients.fulfilled, (state, action) => {
+      .addCase(fetchIngredients.fulfilled, (state, action) => {
         state.isLoading = false;
         state.ingredients = action.payload;
       })
-      .addCase(getIngredients.rejected, (state, action) => {
+      .addCase(fetchIngredients.rejected, (state, action) => {
         state.isLoading = false;
         state.error = action.payload as string;
       });

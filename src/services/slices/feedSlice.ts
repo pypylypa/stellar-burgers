@@ -1,9 +1,8 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getFeedsApi } from '@api';
-import { TOrder, TOrdersData } from '@utils-types';
+import { TOrdersData } from '@utils-types';
 
 interface IFeedState extends TOrdersData {
-  orders: TOrder[];
   total: number;
   totalToday: number;
   isLoading: boolean;
@@ -20,10 +19,12 @@ export const initialState: IFeedState = {
 export const fetchFeeds = createAsyncThunk('feed/fetchFeeds', getFeedsApi);
 
 const feedSlice = createSlice({
-  name: 'feedReducer',
+  name: 'feed',
   initialState,
   reducers: {
-    clearFeedError: () => initialState
+    clearFeedError: (state) => {
+      state.error = null;
+    }
   },
   extraReducers: (builder) => {
     builder

@@ -8,7 +8,7 @@ jest.mock(
 
 import ingredientsReducer, {
   initialState,
-  getIngredients
+  fetchIngredients
 } from '../../services/slices/ingredientsSlice';
 import type { TIngredient } from '@utils-types';
 import ingredientsMock from '../../mocks/ingredients.json';
@@ -22,7 +22,7 @@ describe('ingredientsSlice reducer', () => {
   });
 
   test('Должен устанавливать isLoading = true при pending', () => {
-    const action = { type: getIngredients.pending.type };
+    const action = { type: fetchIngredients.pending.type };
     const result = ingredientsReducer(initialState, action);
 
     expect(result.isLoading).toBe(true);
@@ -31,7 +31,7 @@ describe('ingredientsSlice reducer', () => {
 
   test('Должен записывать ингредиенты в store при successful', () => {
     const action = {
-      type: getIngredients.fulfilled.type,
+      type: fetchIngredients.fulfilled.type,
       payload: mockIngredients
     };
 
@@ -47,7 +47,7 @@ describe('ingredientsSlice reducer', () => {
   test('Должен записывать ошибку в store при rejected', () => {
     const errorMessage = 'Ошибка сервера';
     const action = {
-      type: getIngredients.rejected.type,
+      type: fetchIngredients.rejected.type,
       payload: errorMessage
     };
 

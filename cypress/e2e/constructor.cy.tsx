@@ -62,10 +62,10 @@ describe('Конструктор бургеров', () => {
   beforeEach(() => {
     cy.intercept('GET', SELECTORS.API_INGREDIENTS, { 
       fixture: SELECTORS.FIXTURE_INGREDIENTS 
-    }).as('getIngredients');
+    }).as('fetchIngredients');
 
     cy.visit('/');
-    cy.wait('@getIngredients');
+    cy.wait('@fetchIngredients');
     cy.wait(1000);
   });
 
@@ -142,7 +142,7 @@ describe('Конструктор бургеров', () => {
       });
 
       cy.reload();
-      cy.wait('@getIngredients');
+      cy.wait('@fetchIngredients');
       cy.wait('@getUser');
       cy.wait(1000);
     });

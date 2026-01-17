@@ -16,7 +16,7 @@ import '../../index.css';
 import styles from './app.module.css';
 import { useEffect } from 'react';
 import { checkUserAuth } from '../../services/slices/userSlice';
-import { getIngredients } from '../../services/slices/ingredientsSlice';
+import { fetchIngredients } from '../../services/slices/ingredientsSlice';
 import { useDispatch } from '../../services/store';
 
 const App = () => {
@@ -30,7 +30,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    dispatch(getIngredients());
+    dispatch(fetchIngredients());
     dispatch(checkUserAuth());
   }, [dispatch]);
 
