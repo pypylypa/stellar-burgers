@@ -8,7 +8,7 @@ interface UserOrdersState {
   error: string | null;
 }
 
-const initialState: UserOrdersState = {
+export const initialState: UserOrdersState = {
   orders: [],
   isLoading: false,
   error: null
@@ -28,8 +28,8 @@ export const fetchUserOrders = createAsyncThunk(
   }
 );
 
-const userOrdersSlice = createSlice({
-  name: 'Orders',
+export const userOrdersSlice = createSlice({
+  name: 'userOrders',
   initialState,
   reducers: {
     clearUserOrdersError: (state) => {

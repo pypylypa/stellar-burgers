@@ -1,0 +1,29 @@
+[
+  {
+    "_id": "order1",
+    "ingredients": ["60d3b41abdacab0026a733c7", "60d3b41abdacab0026a733c8"],
+    "status": "done",
+    "name": "Флюоресцентный бургер",
+    "number": 1,
+    "createdAt": "2025-12-01T12:00:00.000Z",
+    "updatedAt": "2025-12-01T12:00:00.000Z"
+  },
+  {
+    "_id": "order2",
+    "ingredients": ["60d3b41abdacab0026a733c6", "60d3b41abdacab0026a733c9"],
+    "status": "pending",
+    "name": "Краторный бургер",
+    "number": 2,
+    "createdAt": "2025-12-01T13:00:00.000Z",
+    "updatedAt": "2025-12-01T13:00:00.000Z"
+  },
+  {
+    "_id": "order3",
+    "ingredients": ["60d3b41abdacab0026a733c6", "60d3b41abdacab0026a733c8", "60d3b41abdacab0026a733cc"],
+    "status": "done",
+    "name": "Space бургер",
+    "number": 3,
+    "createdAt": "2025-12-02T10:00:00.000Z",
+    "updatedAt": "2025-12-02T10:00:00.000Z"
+  }
+]

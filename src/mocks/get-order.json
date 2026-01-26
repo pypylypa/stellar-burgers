@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "orders": [{
+    "number": 67890,
+    "ingredients": ["bun2", "main2"],
+    "_id": "order456",
+    "status": "pending",
+    "name": "Краторный бургер",
+    "createdAt": "2025-12-02",
+    "updatedAt": "2025-12-02"
+  }]
+}
+

@@ -1,0 +1,5 @@
+{
+  "success": true,
+  "refreshToken": "new-refresh-token",
+  "accessToken": "new-access-token"
+}

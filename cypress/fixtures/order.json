@@ -1,0 +1,13 @@
+{
+  "success": true,
+  "name": "Флюоресцентный бургер",
+  "order": {
+    "number": 12345,
+    "ingredients": ["60d3b41abdacab0026a733c7", "60d3b41abdacab0026a733c8"],
+    "_id": "order123",
+    "status": "done",
+    "name": "Флюоресцентный бургер",
+    "createdAt": "2025-12-01T00:00:00.000Z",
+    "updatedAt": "2025-12-01T00:00:00.000Z"
+  }
+}

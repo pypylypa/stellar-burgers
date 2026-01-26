@@ -4,7 +4,7 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { TConstructorIngredient } from '@utils-types';
 import { BurgerConstructorUI } from '@ui';
 import { createOrder, clearOrder } from '../../services/slices/orderSlice';
-import { clearConstructor } from '../../services/slices/constructorSlice';
+import { clearIngredients } from '../../services/slices/constructorSlice';
 
 export const BurgerConstructor: FC = () => {
   const dispatch = useDispatch();
@@ -53,7 +53,7 @@ export const BurgerConstructor: FC = () => {
     dispatch(createOrder(ingredientIds))
       .unwrap()
       .then(() => {
-        dispatch(clearConstructor());
+        dispatch(clearIngredients());
       })
       .catch((error) => {
         console.error('Не удалось создать заказ:', error);
